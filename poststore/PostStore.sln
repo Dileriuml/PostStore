@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 5.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostStore", "PostStore\PostStore.csproj", "{5FD22212-F957-4B00-B09A-71324A236CB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostStore.Data", "PostStore.Data\PostStore.Data.csproj", "{A8A6009B-720B-48A2-82AA-DB4802649EED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{FE5BF91F-CE7A-4B4C-9250-28A6DD0D5E5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FD22212-F957-4B00-B09A-71324A236CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD22212-F957-4B00-B09A-71324A236CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD22212-F957-4B00-B09A-71324A236CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD22212-F957-4B00-B09A-71324A236CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A6009B-720B-48A2-82AA-DB4802649EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A6009B-720B-48A2-82AA-DB4802649EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A6009B-720B-48A2-82AA-DB4802649EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A6009B-720B-48A2-82AA-DB4802649EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE5BF91F-CE7A-4B4C-9250-28A6DD0D5E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5BF91F-CE7A-4B4C-9250-28A6DD0D5E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5BF91F-CE7A-4B4C-9250-28A6DD0D5E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5BF91F-CE7A-4B4C-9250-28A6DD0D5E5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

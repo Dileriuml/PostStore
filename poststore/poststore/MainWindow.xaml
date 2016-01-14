@@ -1,0 +1,12 @@
+﻿<Window x:Class="PostStore.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="PostStore" Height="300" Width="300">
+    <Grid>
+        <DataGrid ItemsSource="{Binding PostEntries}">
+            <DataGrid.InputBindings>
+                <KeyBinding Key="Enter" />
+            </DataGrid.InputBindings>
+        </DataGrid>
+    </Grid>
+</Window>
