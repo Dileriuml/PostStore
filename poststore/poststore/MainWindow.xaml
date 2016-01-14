@@ -1,12 +1,13 @@
-﻿<Window x:Class="PostStore.MainWindow"
+﻿<metro:MetroWindow x:Class="PostStore.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+    BorderBrush="{DynamicResource AccentColorBrush}"
+    GlowBrush="{DynamicResource AccentColorBrush}"
     Title="PostStore" Height="300" Width="300">
-    <Grid>
-        <DataGrid ItemsSource="{Binding PostEntries}">
-            <DataGrid.InputBindings>
-                <KeyBinding Key="Enter" />
-            </DataGrid.InputBindings>
-        </DataGrid>
-    </Grid>
-</Window>
+    <Window.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding CreateNewEntryCommand}" />
+    </Window.InputBindings>
+
+    <DataGrid ItemsSource="{Binding Items}"/>
+</metro:MetroWindow>
