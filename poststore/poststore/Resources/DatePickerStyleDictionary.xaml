@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cv="clr-namespace:PostStore.Converters"
+                    xmlns:s="clr-namespace:PostStore.Strings">
+    <cv:DateTimeConverter x:Key="DateTimeConverter"/>
+
+    <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Style.Resources>
+            <Style TargetType="{x:Type DatePickerTextBox}">
+                <Setter Property="Control.Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <TextBox x:Name="PART_TextBox" 
+                                 Text="{Binding SelectedDate,
+                                    RelativeSource={RelativeSource AncestorType={x:Type DatePicker}},
+                                    Converter={StaticResource DateTimeConverter}, Mode=TwoWay}"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+    </Style>
+</ResourceDictionary>

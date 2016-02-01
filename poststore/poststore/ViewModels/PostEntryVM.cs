@@ -1,18 +1,29 @@
 ﻿using System;
 using PostStore.Data.Models;
+using System.Collections.ObjectModel;
 
 namespace PostStore.ViewModels
 {
     public class PostEntryVM : VMBase
     {
-        PostEntry entry;
+        #region Fields
+
+        private PostEntry entry;
+
+        #endregion
+
+        #region Constructors
 
         public PostEntryVM(PostEntry pe)
         {
             this.entry = pe;
         }
 
-        public int Id
+        #endregion
+
+        #region Properties
+
+        public int DocumentID
         {
             get
             {
@@ -22,7 +33,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.TSDocId = value;
-                this.OnPropertyChanged(x => x.Id);
+                RaisePropertyChanged();
             }
         }
 
@@ -36,7 +47,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.ContainerID = value;
-                this.OnPropertyChanged(x => x.ContainerID);
+                RaisePropertyChanged();
             }
         }
 
@@ -50,7 +61,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.FirstName = value;
-                this.OnPropertyChanged(x => x.FirstName);
+                RaisePropertyChanged();
             }
         }
 
@@ -64,25 +75,11 @@ namespace PostStore.ViewModels
             set
             {
                 entry.LastName = value;
-                this.OnPropertyChanged(x => x.LastName);
+                RaisePropertyChanged();
             }
         }
 
-        public string VesselName
-        {
-            get
-            {
-                return entry.VesselName;
-            }
-
-            set
-            {
-                entry.VesselName = value;
-                this.OnPropertyChanged(x => x.VesselName);
-            }
-        }
-
-        public int Balance
+        public double Balance
         {
             get
             {
@@ -92,7 +89,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.Balance = value;
-                this.OnPropertyChanged(x => x.Balance);
+                RaisePropertyChanged();
             }
         }
 
@@ -106,7 +103,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.DateUplifted = value;
-                this.OnPropertyChanged(x => x.UpliftedDate);
+                RaisePropertyChanged();
             }
         }
 
@@ -120,7 +117,7 @@ namespace PostStore.ViewModels
             set
             {
                 entry.DateOfReport = value;
-                this.OnPropertyChanged(x => x.DateOfReport);
+                RaisePropertyChanged();
             }
         }
 
@@ -134,8 +131,18 @@ namespace PostStore.ViewModels
             set
             {
                 entry.DateOfDischarge = value;
-                this.OnPropertyChanged(x => x.DateOfDischarge);
+                RaisePropertyChanged();
             }
         }
+
+        public ObservableCollection<Package> Cargo
+        {
+            get
+            {
+                return entry.Items;
+            }
+        }
+
+        #endregion
     }
 }

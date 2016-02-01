@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PostStore.Data.Models
@@ -8,14 +9,15 @@ namespace PostStore.Data.Models
     {
         [Key]
         [Column(Order = 0)]
-        [ForeignKey("Entry")]
+        [ForeignKey(nameof(Entry))]
         public int DocId { get; set; }
 
         [Key]
         [Column(Order = 1)]
-        [ForeignKey("Type")]
+        [ForeignKey(nameof(Type))]
         public int ItemTypeId { get; set; }
 
+        [DefaultValue(1)]
         public int Count { get; set; }
 
         public PostEntry Entry { get; set; }
@@ -24,7 +26,7 @@ namespace PostStore.Data.Models
 
         public override string ToString()
         {
-            return $"{Entry.FirstName} of type {Type.Name}";
+            return $"{Count} {Type.Name}";
         }
     }
 }

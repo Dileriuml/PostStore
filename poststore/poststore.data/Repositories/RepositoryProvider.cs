@@ -1,6 +1,7 @@
 ﻿using PostStore.Data.Models;
 using PostStore.Data.Repositories.Interfaces;
 using PostStore.Data.SQL;
+using System.Threading.Tasks;
 
 namespace PostStore.Data.Repositories
 {
@@ -40,6 +41,11 @@ namespace PostStore.Data.Repositories
             {
                 return new PackageRepository(dbContext);
             }
+        }
+
+        public async Task SaveAllAsync()
+        {
+            await dbContext.SaveChangesAsync();
         }
     }
 }
